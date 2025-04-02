@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Jaro&display=swap');
+
+
+
+
+.glowing-cursor {
+  position: fixed;
+  width: 1px;
+  height: auto;
+  background-color: #17f1d1; /* Light yellow */
+  border-radius: 50%;
+  border: none;
+  pointer-events: none;
+  box-shadow: 0 0 50vh 30vh #17f1d1; /* Glow effect */
+  transform: translate(-50%, -50%); /* Centers the glow */
+  transition: transform 0.5s linear;
+  mix-blend-mode: lighten; /* Makes it blend nicely with the background */
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.MainPage {
+    width: 100vw;
+    background-color: #1D1D1F;
+}
+.shiny-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+
+
+
+
+
+
+
+/* Styling for MainPAgesection1 */
+.MainPAgesection1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  overflow-y: hidden;
+
+}
+
+/* Keep original design but make it responsive */
+.MainPAgesection1ImageAndText {
+  background-image: url('../images/MainPAgeSection1Img.png');
+  background-size: cover;
+  background-position: center;
+  width: 40vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  border-radius: 40px;
+  overflow-y: hidden;
+
+  transition: transform 0.5s ease-out, box-shadow 0.3s ease-out;
+}
+
+/* Dynamic shadow effect (removed in smaller screens) */
+
+
+/* Row container for text and button */
+.MainPAgesection1Row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Keep original text styles */
+.MainPAgesection1ImageAndTextText1,
+.MainPAgesection1ImageAndTextText2,
+.MainPAgesection1ImageAndTextText3 {
+  color: #17F1D1;
+  font-family: 'Jaini Purva', cursive;
+  font-size: 96px;
+}
+
+.MainPAgesection1ImageAndTextText1 {
+  transform: rotate(5deg);
+}
+.MainPAgesection1ImageAndTextText2 {
+  transform: rotate(-5deg);
+}
+.MainPAgesection1ImageAndTextText3 {
+  transform: rotate(5deg);
+}
+
+.MainPAgesection1Row {
+  overflow-y: hidden;
+}
+
+/* Button styling */
+.MainPAgesection1ImageAndTextButton {
+  background-color: #FFD074;
+  border-radius: 50px;
+  border: none;
+  height: 10vh;
+  width: 15vw;
+  color: white;
+  font-size: x-large;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  transform: rotate(-5deg);
+}
+
+.MainPAgesection1ImageAndTextButton:hover {
+  background-color: #ffb947;
+}
+
+/* Responsive Fixes: Keep design but remove shadow for smaller screens */
+@media (max-width: 1024px) {
+  .MainPAgesection1ImageAndText {
+    width: 50vw;
+  }
+
+  .MainPAgesection1ImageAndText.tilted {
+    box-shadow: none; /* Remove shadow on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .MainPAgesection1 {
+    height: auto;
+    padding: 10px;
+  }
+
+  .MainPAgesection1ImageAndText {
+    width: 70vw;
+  }
+
+  .MainPAgesection1Row {
+    flex-direction: column;
+  }
+
+  .MainPAgesection1ImageAndTextButton {
+    width: 40vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .MainPAgesection1 {
+    height: auto;
+    padding: 10px;
+  }
+
+  .MainPAgesection1ImageAndText {
+    width: 90vw;
+  }
+
+  .MainPAgesection1ImageAndText.tilted {
+    box-shadow: none; /* Remove shadow for mobile */
+  }
+}
+
+
+
+
+/* Main Section */
+.MainPAgesection2 {
+  height: auto; /* Adjust height dynamically */
+  min-height: 60vh;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5vh 5vw;
+}
+
+/* Content Container */
+.MainPAgesection2conteiner {
+  max-width: 90%;
+  width: 35vw;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Keeps left alignment */
+  justify-content: center;
+  text-align: left;
+}
+
+/* Headings */
+.MainPAgesection2Text1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-family: 'Jaini Purva', cursive;
+}
+
+.MainPAgesection2Text2,
+.MainPAgesection2Text3,
+.MainPAgesection2Text4,
+.MainPAgesection2Text5,
+.MainPAgesection2Text6,
+.MainPAgesection2Text7,
+.MainPAgesection2Text8 {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-family: 'Jaini Purva', cursive;
+}
+
+/* Colors */
+.MainPAgesection2Text3 { color: #674D9B; }
+.MainPAgesection2Text4 { color: #17F1D1; }
+.MainPAgesection2Text6,
+.MainPAgesection2Text7 { color: #FFD074; }
+
+/* Row Containers */
+.MainPAgesection2Row1,
+.MainPAgesection2Row2,
+.MainPAgesection2Row3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Keeps text left-aligned */
+  width: 100%;
+}
+
+/* Ensure text aligns correctly */
+.MainPAgesection2Row1 > *,
+.MainPAgesection2Row2 > *,
+.MainPAgesection2Row3 > * {
+  align-self: flex-start;
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .MainPAgesection2conteiner {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .MainPAgesection2 {
+    padding: 5vh 3vw;
+    height: 50vh; /* Adjust height to 50vh for tablet */
+  }
+  .MainPAgesection2conteiner {
+    width: 70%;
+  }
+  .MainPAgesection2Row1,
+  .MainPAgesection2Row2,
+  .MainPAgesection2Row3 {
+    justify-content: flex-start; /* Keeps text left-aligned */
+  }
+}
+
+@media (max-width: 480px) {
+  .MainPAgesection2 {
+    padding: 5vh 2vw;
+    height: 50vh; /* Adjust height to 50vh for mobile */
+  }
+  .MainPAgesection2conteiner {
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+/* MainPAgesection3 CSS */
+.MainPAgesection3{
+  transform: rotate(10deg);
+  transition: transform 0.5s ease;
+  align-items: center;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 65vw; /* Set width to 65% of the screen width */
+  height: 70vh;
+  position: relative;
+  margin-bottom: 10vh;
+  overflow: unset; /* Remove overflow-x and overflow-y */
+}
+
+.carousel-image {
+  height: auto;
+  transition: transform 2s ease, opacity 0.5s ease;
+  position: absolute;
+  opacity: 0.15;
+}
+
+.carousel-image.prev {
+  transform: translateX(-35vw) scale(1);
+  border-radius: 30px;
+  width: 25vw;
+}
+
+.carousel-image.current {
+  transform: translateX(0) scale(1.4);
+  opacity: 1;
+  z-index: 2;
+  border-radius: 30px;
+  width: 30vw;
+}
+
+/* Adjust for next image */
+.carousel-image.next {
+  transform: translateX(35vw) scale(1);
+  border-radius: 30px;
+  width: 25vw;
+}
+
+/* 🔹 Responsive Adjustments */
+@media (max-width: 1024px) {
+  .MainPAgesection3 {
+    height: 60vh; /* Reduce height to 50vh for tablet */
+    overflow-y: hidden;
+  }
+
+  .carousel-container {
+    width: 100vw; /* Set width to 65% of screen for tablet */
+  }
+
+  .carousel-image.current {
+    width: 70vw; /* Set width to 90% of screen for tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .MainPAgesection3 {
+    height: 60vh; /* Reduce height to 50vh for tablet */
+    overflow-y: hidden;
+  }
+
+  .carousel-container {
+    width: 100vw; /* Set width to 65% of screen for tablet */
+  }
+
+  .carousel-image.current {
+    width: 70vw; /* Set width to 90% of screen for tablet */
+  }
+}
+
+@media (max-width: 480px) {
+  .MainPAgesection3 {
+    height: 60vh; /* Reduce height to 50vh for mobile */
+    overflow-y: hidden;
+  }
+
+  .carousel-container {
+    width: 100vw; /* Set width to 65% of screen for mobile */
+  }
+
+  .carousel-image.current {
+    width: 70vw; /* Set width to 90% of screen for mobile */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+/* Default Design for Desktop */
+.MainPAgesection4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.MainPAgesection4conteiner1,
+.MainPAgesection4conteiner2,
+.MainPAgesection4conteiner3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 70vw;
+}
+
+/* Reverse second container layout */
+.MainPAgesection4conteiner2 {
+  flex-direction: row-reverse; /* Moves image to the right, text to the left */
+}
+
+/* Images */
+.MainPAgesection4conteiner1image1,
+.MainPAgesection4conteiner2image1,
+.MainPAgesection4conteiner3image1 {
+  width: 40%;
+  border-radius: 30px;
+  object-fit: cover;
+}
+
+/* Text Containers */
+.MainPAgesection4conteiner1Row1,
+.MainPAgesection4conteiner2Row1,
+.MainPAgesection4conteiner3Row1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 55%;
+}
+
+/* Header Text */
+.MainPAgesection4Headertext {
+  font-family: 'Jacques Francois', serif;
+  color: white;
+  font-size: 40px;
+  padding-bottom: 5vh;
+  text-align: center;
+}
+
+.MainPAgesection4conteiner1HeaderText,
+.MainPAgesection4conteiner2HeaderText,
+.MainPAgesection4conteiner3HeaderText {
+  font-family: 'Jaro', sans-serif;
+  font-size: 36px;
+  text-align: center;
+}
+
+.MainPAgesection4conteiner1HeaderText {
+  color: #17F1D1;
+}
+
+.MainPAgesection4conteiner2HeaderText {
+  color: #A374FF;
+}
+
+.MainPAgesection4conteiner3HeaderText {
+  color: #FFD074;
+}
+
+/* Informational Text */
+.MainPAgesection4conteiner1InformationalText,
+.MainPAgesection4conteiner2InformationalText,
+.MainPAgesection4conteiner3InformationalText {
+  color: white;
+  font-size: 21px;
+  padding-top: 3vh;
+  font-family: 'Jacques Francois', serif;
+  text-align: center;
+}
+
+/* 🔹 Tablet View (768px and below) */
+@media (max-width: 768px) {
+  .MainPAgesection4conteiner1,
+  .MainPAgesection4conteiner2,
+  .MainPAgesection4conteiner3 {
+    flex-direction: column; /* Stack content vertically */
+    width: 90vw; /* Increase width to fit better on tablets */
+  }
+
+  .MainPAgesection4conteiner1image1,
+  .MainPAgesection4conteiner2image1,
+  .MainPAgesection4conteiner3image1 {
+    width: 60%; /* Adjust images to be slightly larger */
+    margin-bottom: 20px; /* Add spacing between image and text */
+  }
+
+  .MainPAgesection4conteiner1Row1,
+  .MainPAgesection4conteiner2Row1,
+  .MainPAgesection4conteiner3Row1 {
+    width: 100%; /* Full width for text sections */
+  }
+
+  .MainPAgesection4Headertext {
+    font-size: 30px; /* Reduce header text size */
+  }
+
+  .MainPAgesection4conteiner1HeaderText,
+  .MainPAgesection4conteiner2HeaderText,
+  .MainPAgesection4conteiner3HeaderText {
+    font-size: 28px; /* Adjust header text size for readability */
+  }
+
+  .MainPAgesection4conteiner1InformationalText,
+  .MainPAgesection4conteiner2InformationalText,
+  .MainPAgesection4conteiner3InformationalText {
+    font-size: 18px; /* Adjust informational text size */
+  }
+}
+
+/* 🔹 Mobile View (480px and below) */
+@media (max-width: 480px) {
+  .MainPAgesection4conteiner1,
+  .MainPAgesection4conteiner2,
+  .MainPAgesection4conteiner3 {
+    flex-direction: column; /* Stack content vertically */
+    width: 95vw; /* Max width for better spacing */
+  }
+
+  .MainPAgesection4conteiner1image1,
+  .MainPAgesection4conteiner2image1,
+  .MainPAgesection4conteiner3image1 {
+    width: 80%; /* Full width for better visibility on mobile */
+    margin-bottom: 15px;
+  }
+
+  .MainPAgesection4Headertext {
+    font-size: 24px; /* Adjust header size */
+    padding-bottom: 3vh; /* Reduce padding for mobile screens */
+  }
+
+  .MainPAgesection4conteiner1HeaderText,
+  .MainPAgesection4conteiner2HeaderText,
+  .MainPAgesection4conteiner3HeaderText {
+    font-size: 22px; /* Adjust header text size for mobile */
+  }
+
+  .MainPAgesection4conteiner1InformationalText,
+  .MainPAgesection4conteiner2InformationalText,
+  .MainPAgesection4conteiner3InformationalText {
+    font-size: 16px; /* Adjust informational text size */
+  }
+}
+
+
+
+
+
+  /* section5 */
+/* Default Design for Desktop */
+.MainPAgesection5 {
+  display: flex;
+  justify-content: space-between; /* Keeps sections side by side */
+  gap: 10px;
+  padding-top: 10vh;
+  width: 75vw;
+  margin-left: 12.5vw;
+  height: auto;
+}
+
+/* Ensures all sections are aligned in a row on desktop */
+.MainPAgesection5Section1,
+.MainPAgesection5Section2,
+.MainPAgesection5Section3 {
+  width: 30vw;
+  background: none;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-family: 'Jacques Francois', sans-serif;
+  display: flex;
+  flex-direction: column; /* Stacks content vertically inside each section */
+  align-items: center;
+}
+
+/* Headings */
+.MainPAgesection5Section1 h1,
+.MainPAgesection5Section2 h1,
+.MainPAgesection5Section3 h1 {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 0.571);
+}
+
+/* Images */
+.MainPAgesection5Section1 img,
+.MainPAgesection5Section2 img,
+.MainPAgesection5Section3 img {
+  width: 20vw;
+  height: auto;
+  border-radius: 30px;
+  margin-top: 5vh;
+}
+
+/* Paragraphs */
+.MainPAgesection5Section1 p,
+.MainPAgesection5Section2 p,
+.MainPAgesection5Section3 p {
+  margin-top: 2vh;
+  font-family: 'Jaro', sans-serif;
+}
+
+/* Button */
+.MainPAgesection5SeeMoreButton {
+  margin-top: 10vh;
+  border-radius: 15px;
+  width: 10vw;
+  height: 10vh;
+  background-color: #2C2C2C;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+/* Hover Effect */
+.MainPAgesection5SeeMoreButton:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out;
+  background-color: #323131;
+}
+
+/* 🔹 Tablet View (768px and below) */
+@media (max-width: 768px) {
+  .MainPAgesection5 {
+    flex-direction: column; /* Stack sections vertically */
+    width: 90vw; /* Use more width on tablets */
+    margin-left: 5vw; /* Adjust left margin */
+    padding-top: 5vh; /* Reduced padding for better spacing */
+  }
+
+  .MainPAgesection5Section1,
+  .MainPAgesection5Section2,
+  .MainPAgesection5Section3 {
+    width: 80vw; /* Increase width for each section */
+    margin-bottom: 20px; /* Add spacing between sections */
+  }
+
+  .MainPAgesection5Section1 img,
+  .MainPAgesection5Section2 img,
+  .MainPAgesection5Section3 img {
+    width: 50vw; /* Increase image size for tablets */
+    margin-top: 3vh; /* Reduce top margin */
+  }
+
+  .MainPAgesection5SeeMoreButton {
+    width: 30vw; /* Make button wider */
+    height: 8vh; /* Adjust button height */
+    font-size: 1.3rem; /* Adjust font size for better readability */
+  }
+}
+
+/* 🔹 Mobile View (480px and below) */
+@media (max-width: 480px) {
+  .MainPAgesection5 {
+    flex-direction: column; /* Stack sections vertically */
+    width: 95vw; /* Max width for mobile */
+    margin-left: 2.5vw; /* Smaller left margin */
+    padding-top: 3vh; /* Adjust padding for better spacing */
+  }
+
+  .MainPAgesection5Section1,
+  .MainPAgesection5Section2,
+  .MainPAgesection5Section3 {
+    width: 90vw; /* Make sections almost full width on mobile */
+    margin-bottom: 20px; /* Add more spacing between sections */
+  }
+
+  .MainPAgesection5Section1 img,
+  .MainPAgesection5Section2 img,
+  .MainPAgesection5Section3 img {
+    width: 70vw; /* Increase image size for mobile */
+    margin-top: 3vh; /* Reduce the gap between image and text */
+  }
+
+  .MainPAgesection5SeeMoreButton {
+    width: 80vw; /* Make button take up more space */
+    height: 8vh; /* Adjust height for mobile */
+    font-size: 1.2rem; /* Adjust font size for readability */
+  }
+
+  /* Move Section 2 below Section 3 */
+  .MainPAgesection5Section2 {
+    order: 3; /* Ensure Section 2 is placed below Section 3 on mobile */
+  }
+
+  .MainPAgesection5Section3 {
+    order: 2; /* Move Section 3 above Section 2 */
+  }
+}
+
+
+
+
+
+
+/* section6 */
+.MainPAgesection6 {
+  width: 100vw;
+  min-height: 100vh; /* Ensure full height but allow content to expand */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers text vertically */
+  align-items: center; /* Centers text horizontally */
+  background-color: #1D1D1F; /* Dark background */
+  padding: 20px; /* Add padding for smaller screens */
+  text-align: center;
+}
+
+.MainPAgesection6 h1 {
+  font-family: 'Jaini Purva', cursive;
+  font-size: clamp(3rem, 10vw, 8rem); /* Responsive font size */
+  font-weight: 500; /* Make text thinner */
+  color: white;
+  line-height: 1.2; /* Adjust spacing */
+  letter-spacing: 2px; /* Space out characters slightly */
+  overflow-y: hidden;
+  text-align: center;
+}
+
+/* Adjust margin dynamically */
+.MainPAgesection6Text2 {
+  margin-left: -15vw;
+}
+
+/* 🔹 Tablet View (768px and below) */
+@media (max-width: 768px) {
+  .MainPAgesection6 {
+    padding: 15px; /* Adjust padding for tablet */
+    min-height: 40vh; /* Reduce height to 40vh for tablet */
+  }
+
+  .MainPAgesection6 h1 {
+    font-size: clamp(2.5rem, 8vw, 6rem); /* Smaller font size for tablets */
+    letter-spacing: 1px; /* Adjust letter-spacing */
+  }
+
+  .MainPAgesection6Text2 {
+    margin-left: -10vw; /* Adjust margin for smaller screens */
+  }
+}
+
+/* 🔹 Mobile View (480px and below) */
+@media (max-width: 480px) {
+  .MainPAgesection6 {
+    padding: 10px; /* Reduced padding for mobile */
+    min-height: 40vh; /* Reduce height to 40vh for mobile */
+  }
+
+  .MainPAgesection6 h1 {
+    font-size: clamp(2rem, 10vw, 5rem); /* Even smaller font size for mobile */
+    letter-spacing: 0px; /* Remove letter-spacing on mobile */
+  }
+
+  .MainPAgesection6Text2 {
+    margin-left: -5vw; /* Adjust margin even more for mobile */
+  }
+}

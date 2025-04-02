@@ -1,0 +1,224 @@
+:root {
+  --SearchPageFilterButton1-color: #17F1D1;
+  --SearchPageFilterButton2-color: #A374FF;
+  --SearchPageFilterButton3-color: #FFD074;
+  --SearchPageFilterButton4-color: rgb(255, 0, 0);
+}
+
+.glowing-cursor {
+  position: fixed;
+  width: 1px;
+  height: auto;
+  background-color: #e34a3f1f; /* Light yellow */
+  border-radius: 50%;
+  border: none;
+  pointer-events: none;
+  box-shadow: 0 0 50vh 30vh #e34a3f74; /* Glow effect */
+  transform: translate(-50%, -50%); /* Centers the glow */
+  transition: transform 0.5s linear;
+  mix-blend-mode: lighten; /* Makes it blend nicely with the background */
+}
+
+.SearchPage {
+  width: 100vw;
+  height: auto;
+  background-color: #1d1d1f; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 14vh;
+}
+
+.SearchPageFilter {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  gap: 2vw;
+  background-color: transparent;
+}
+
+.SearchPageFilterButton {
+  border: none;
+  font-size: 1.5rem;
+  font-family: 'Jaro', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  width: 22%;
+  height: 8vh;
+  border-radius: 30px;
+  font-weight: 900;
+  text-align: center;
+  min-width: 120px;
+}
+
+.SearchPageFilterButton1 { color: var(--SearchPageFilterButton1-color); }
+.SearchPageFilterButton2 { color: var(--SearchPageFilterButton2-color); }
+.SearchPageFilterButton3 { color: var(--SearchPageFilterButton3-color); }
+.SearchPageFilterButton4 { color: var(--SearchPageFilterButton4-color); }
+
+.SearchPageFilterButton.active {
+  background-color: rgb(0, 0, 0) !important;
+  color: white !important;
+}
+
+.SearchPageItems {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+  width: 100%;
+  padding-top: 2rem;
+  color: white;
+}
+
+.SearchPageItemsContainer {
+  display: flex;
+  justify-content: space-around;
+
+  gap: 2rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.SearchPageCategory {
+  width: 20%;
+  /* background-color: #f9f9f9; */
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: width 0.3s ease-in-out;
+  display: none;
+}
+
+.SearchPageCategory.full-width {
+  margin-left: 3%;
+  width: 100%;
+  display: block;
+}
+
+.SearchPageCategory.side-by-side {
+  width: 22%;
+  display: block;
+
+}
+.renderitem{
+  display: flex;
+
+}
+
+.SearchPageCategory.hidden {
+  display: none;
+}
+
+.SearchPageItemGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.SearchPageItemGrid.vertical {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.SearchPageItemGrid.vertical .SearchPageItem {
+  width: 90%;
+}
+
+.SearchPageItem {
+  background-color: #8181815f;
+
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.218);
+  text-align: center;
+  width: 22%;
+}
+
+.SearchPageItem img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.SearchPageCategory h2 {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+/* 🔹 Video Thumbnail (for YouTube Videos) */
+.video-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-thumbnail .play-button {
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  opacity: 0.8;
+  transition: transform 0.2s ease-in-out;
+}
+
+.video-thumbnail:hover .play-button {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* 🔹 Popup Video */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  background: #000;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.popup-content iframe {
+  width: 800px;
+  height: 450px;
+  border-radius: 8px;
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+}
+

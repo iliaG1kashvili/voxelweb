@@ -1,0 +1,211 @@
+.PageHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Push elements to the sides */
+  background: none !important;
+  box-shadow: none;
+  z-index: 1000;
+}
+
+/* Aligns the hamburger and button to the right */
+.right-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: 3vw;
+}
+
+/* Keep button styles */
+.hamburger {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  background-color: #9e70f6;
+  border-radius: 100%;
+  width: 6vh;
+  height: 6vh;
+}
+
+/* Dropdown menu styles */
+.menu {
+  position: absolute;
+  top: 40px;
+  right: 0; /* Moved to right */
+  background: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  width: 150px;
+}
+
+.menu.open {
+  display: flex;
+}
+
+.menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu a:hover {
+  background: #f0f0f0;
+}
+
+.headersMainText {
+  color: #17F1D1;
+}
+
+/* Get in touch button */
+.getInTachButton {
+  background: none;
+  border-radius: 30px;
+  font-size: medium;
+  color: white;
+  border-color: #9e70f6;
+  width: 8vw;
+  height: 6vh;
+  border-width: 0.1px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Hide button on scroll */
+.getInTachButton.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.close-button{
+  border: none;
+  background-color: white;
+  font-size: xx-large;
+}
+
+.headersMainText {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  padding-left: 2vw;
+  padding-top: 2vh;
+}
+
+.right-container {
+  padding-right: 2vw;
+  padding-top: 3vh;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablet and mobile devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .PageHeader {
+    padding: 10px 5vw; /* Adjust padding to be relative */
+  }
+
+  .right-container {
+    margin-right: 5vw;
+  }
+
+  .hamburger {
+    font-size: 20px; /* Reduce font size */
+    width: 5vh;
+    height: 5vh;
+  }
+
+  .menu {
+    width: 130px; /* Reduce menu width */
+  }
+
+  .headersMainText {
+    font-size: 1.5rem; /* Adjust font size */
+    padding-left: 5vw; /* Increase left padding */
+  }
+
+  .getInTachButton {
+    width: 12vw;
+    height: 5vh;
+  }
+}
+
+/* For mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+  .PageHeader {
+    padding: 10px 3vw;
+  }
+
+  .right-container {
+    margin-right: 3vw;
+  }
+
+  .hamburger {
+    font-size: 18px; /* Further reduce font size */
+    width: 5vh;
+    height: 5vh;
+  }
+
+  .menu {
+    width: 120px; /* Adjust menu width */
+  }
+
+  .headersMainText {
+    font-size: 1.2rem; /* Adjust font size */
+    padding-left: 5vw;
+  }
+
+  .getInTachButton {
+    width: 15vw;
+    height: 5vh;
+  }
+}
+
+/* For small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .PageHeader {
+    padding: 10px 2vw;
+  }
+
+  .right-container {
+    margin-right: 2vw;
+  }
+
+  .hamburger {
+    font-size: 16px;
+    width: 5vh;
+    height: 5vh;
+  }
+
+  .menu {
+    width: 100px; /* Adjust menu width */
+  }
+
+  .headersMainText {
+    font-size: 1rem; /* Further adjust font size */
+    padding-left: 5vw;
+  }
+
+  .getInTachButton {
+    width: 20vw;
+    height: 5vh;
+  }
+}
+
+.headersMainText:hover{
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+
+}
+.headersMainText{
+  user-select: none;
+}
+
+.getInTachButton:hover{
+  
+  color: #9e70f6;
+}

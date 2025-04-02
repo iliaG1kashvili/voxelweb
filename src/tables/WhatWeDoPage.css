@@ -1,0 +1,21 @@
+.WhatWeDoPage{
+    height: auto;
+    background-color: #1d1d1f;
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+}
+
+
+.glowing-cursor {
+    position: fixed;
+    width: 1px;
+    height: auto;
+    background-color: #17f1d1; /* Light yellow */
+    border-radius: 50%;
+    border: none;
+    pointer-events: none;
+    box-shadow: 0 0 50vh 30vh #17f1d1; /* Glow effect */
+    transform: translate(-50%, -50%); /* Centers the glow */
+    transition: transform 0.5s linear;
+    mix-blend-mode: lighten; /* Makes it blend nicely with the background */
+  }

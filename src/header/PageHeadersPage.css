@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap'); /* Alternative to Futura */
+
+.PageHeadersPage {
+    display: flex;
+    width: 100vw;
+    height: 110vh;
+    flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
+}
+
+.PageHeadersPageSection1,
+.PageHeadersPageSection2 {
+    flex: 1;
+    height: 100%; /* Ensure both sections take up full height */
+}
+
+.PageHeadersPageSection1seperation {
+    height: 76vh;
+}
+
+.PageHeadersPageSection1Text1,
+.PageHeadersPageSection1Text2,
+.PageHeadersPageSection1Text3 {
+    margin-left: 2vw;
+}
+
+.PageHeadersPageSection1Text1 {
+    color: #a374ff;
+    font-size: 1rem; /* Adjusted font size */
+}
+
+.PageHeadersPageSection1Text2,
+.PageHeadersPageSection1Text3 {
+    font-weight: 100;
+    color: rgba(0, 0, 0, 0.83);
+}
+
+/* Responsive adjustments for Section 1 */
+.PageHeadersPageSection1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2vw; /* Add some padding */
+    height: auto; /* Ensure it adjusts its height accordingly */
+}
+
+.PageHeadersPageSection2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2vw; /* Add padding for mobile responsiveness */
+    height: auto; /* Ensure it adjusts its height accordingly */
+}
+
+/* Button styling */
+.PageHeadersPageSection2Text1 {
+    background: none;
+    border: none;
+    font-size: 5rem; /* Adjusted font size for better mobile view */
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    display: flex;
+    gap: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Letter-by-letter styling */
+.nav-a-letter {
+    display: inline-block;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Create the alternating strikethrough effect, but hidden by default */
+.nav-a-letter::after {
+    content: "";
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
+    height: 5px; /* Line thickness */
+    background-color: #a374ff;
+    transform: scaleX(0); /* Hidden by default */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* On hover, show the line with alternating positions */
+.PageHeadersPageSection2Text1:hover .nav-a-letter::after {
+    transform: scaleX(1);
+}
+
+/* Odd letters: Line goes OVER the letter on hover */
+.PageHeadersPageSection2Text1:hover .nav-a-letter:nth-child(odd)::after {
+    z-index: 2;
+}
+
+/* Even letters: Line goes BEHIND the letter on hover */
+.PageHeadersPageSection2Text1:hover .nav-a-letter:nth-child(even)::after {
+    z-index: -1;
+}
+
+/* Hover effect: Move letters slightly */
+.PageHeadersPageSection2Text1:hover .nav-a-letter {
+    transform: translateY(-5px);
+    opacity: 0.8;
+}
+
+/* Icons */
+.PageHeadersPageSection1iconimg1,
+.PageHeadersPageSection1iconimg2,
+.PageHeadersPageSection1iconimg3,
+.PageHeadersPageSection1iconimg4 {
+    height: 5vh;
+    margin-left: 2vw;
+    margin-bottom: 4vh;
+}
+
+.PageHeadersPageSection1iconimg1:hover {
+    background-color: aqua;
+}
+
+.PageHeadersPageSection1iconimg2:hover {
+    background-color: rgb(215, 97, 207);
+    border-radius: 30px;
+}
+
+.PageHeadersPageSection1iconimg3:hover {
+    background-color: blue;
+}
+
+.PageHeadersPageSection1iconimg4:hover {
+    background-color: red;
+}
+
+/* Media Queries for responsiveness */
+
+/* For tablets and mobile devices (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .PageHeadersPage {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .PageHeadersPageSection1,
+    .PageHeadersPageSection2 {
+        flex: none;
+        width: 100%;
+    }
+
+    .PageHeadersPageSection1seperation {
+        height: 15vh; /* Adjusted to 5vh */
+    }
+    .PageHeadersPageSection1seperation1 {
+        height: 15vh; /* Adjusted to 5vh */
+    }   
+
+    .PageHeadersPageSection1Text1 {
+        font-size: 1.2rem; /* Adjust font size */
+    }
+
+    .PageHeadersPageSection2Text1 {
+        font-size: 3rem; /* Adjust font size */
+    }
+
+    .PageHeadersPageSection1iconimg1,
+    .PageHeadersPageSection1iconimg2,
+    .PageHeadersPageSection1iconimg3,
+    .PageHeadersPageSection1iconimg4 {
+        height: 6vh; /* Adjust icon size */
+        margin-left: 5vw;
+        margin-bottom: 3vh;
+    }
+
+    /* Change the order of the sections */
+    .PageHeadersPageSection1 {
+        order: 2; /* Ensure this section appears first on mobile/tablet */
+    }
+
+    .PageHeadersPageSection2 {
+        order: 1; /* Ensure this section appears second on mobile/tablet */
+    }
+}
+
+/* For mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .PageHeadersPage {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .PageHeadersPageSection1seperation {
+        height: 15vh; /* Adjusted to 5vh */
+    }
+    .PageHeadersPageSection1seperation1 {
+        height: 15vh; /* Adjusted to 5vh */
+    }
+
+    .PageHeadersPageSection1Text1 {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .PageHeadersPageSection2Text1 {
+        font-size: 2.5rem; /* Adjust font size */
+    }
+
+    .PageHeadersPageSection1iconimg1,
+    .PageHeadersPageSection1iconimg2,
+    .PageHeadersPageSection1iconimg3,
+    .PageHeadersPageSection1iconimg4 {
+        height: 5vh; /* Further reduce icon size */
+        margin-left: 3vw;
+        margin-bottom: 2vh;
+    }
+
+    /* Change the order of the sections */
+    .PageHeadersPageSection1 {
+        order: 2; /* Ensure this section appears first on smaller devices */
+    }
+
+    .PageHeadersPageSection2 {
+        order: 1; /* Ensure this section appears second on smaller devices */
+    }
+}
+
+/* For small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+    .PageHeadersPage {
+        flex-direction: column; /* Stack sections vertically */
+    }
+
+    .PageHeadersPageSection1seperation {
+        height: 15vh; /* Adjusted to 5vh */
+    }
+    .PageHeadersPageSection1seperation1 {
+        height: 15vh; /* Adjusted to 5vh */
+    }
+    .PageHeadersPageSection1Text1 {
+        font-size: 0.9rem; /* Adjust font size for smaller devices */
+    }
+
+    .PageHeadersPageSection2Text1 {
+        font-size: 2rem; /* Adjust font size for smaller screens */
+    }
+
+    .PageHeadersPageSection1iconimg1,
+    .PageHeadersPageSection1iconimg2,
+    .PageHeadersPageSection1iconimg3,
+    .PageHeadersPageSection1iconimg4 {
+        height: 4vh; /* Reduce icon size */
+        margin-left: 2vw;
+        margin-bottom: 2vh;
+    }
+
+    /* Change the order of the sections */
+    .PageHeadersPageSection1 {
+        order: 2; /* Ensure this section appears first on small screens */
+    }
+
+    .PageHeadersPageSection2 {
+        order: 1; /* Ensure this section appears second on small screens */
+    }
+}

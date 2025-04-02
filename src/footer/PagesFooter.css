@@ -1,0 +1,176 @@
+.pagesFooter {
+    height: 60vh;
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Equal width sections */
+.pagesFooterSection1, 
+.pagesFooterSection2, 
+.pagesFooterSection3 {
+    flex: 1;
+    background-color: #a374ff;
+    min-width: 300px; /* Ensure sections don't get too small */
+}
+
+/* Center logo in Section 2 */
+.pagesFooterSection2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagesFooterSection2logo {
+    font-family: 'JetBrains Mono', monospace;
+    color: red;
+    font-size: 20rem; /* Responsive font size */
+    text-align: center;
+}
+
+/* Align left */
+.pagesFooterSection1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 2vw;
+}
+
+.pagesFooterSection1UpperSmallText,
+.pagesFooterSection1MiddleTextDiv,
+.pagesFooterSection1EmailSent {
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 5vw;
+}
+
+.pagesFooterSection1UpperSmallText {
+    color: rgba(255, 255, 255, 0.852);
+    font-size: small;
+}
+
+.pagesFooterSection1MiddleText {
+    font-size: 4vw; /* Responsive font size */
+    font-family: 'Akaya Kanadaka', cursive;
+}
+
+/* Adjust input and button layout */
+.pagesFooterSection1EmailSent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    width: auto;
+}
+
+/* Input styling */
+.pagesFooterSection1EmailSentFiled {
+    border: none;
+    border-bottom: 1px solid #00000060;
+    padding: 10px;
+    width: 15vw;
+    max-width: 250px;
+    outline: none;
+    background: transparent;
+}
+
+.pagesFooterSection1EmailSentFiled::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+    opacity: 1;
+}
+
+/* Button styling */
+.pagesFooterSection1EmailSentButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagesFooterSection1EmailSentButton:hover {
+    background-color: #ffd074;
+}
+
+/* Section 3 styling */
+.pagesFooterSection3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    height: 100%;
+    width: 100%;
+    padding-left: 20px;
+}
+
+.pagesFooterSection3OurEmail,
+.pagesFooterSection3Number {
+    margin-bottom: 10px;
+}
+
+.pagesFooterSection3UpperSmallText {
+    color: rgba(255, 255, 255, 0.852);
+    font-size: small;
+}
+
+.pagesFooterSection3OurEmail {
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+}
+
+/* Icon inside the send button */
+.sentbuttonsicon {
+    width: 2vw;
+    height: 2vw;
+    min-width: 15px;
+    min-height: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .pagesFooter {
+        flex-direction: column;
+        height: auto;
+        border: none;
+    }
+
+    .pagesFooterSection1, 
+    .pagesFooterSection2, 
+    .pagesFooterSection3 {
+        width: 100%;
+        padding: 5vw;
+    }
+
+    .pagesFooterSection1MiddleText {
+        font-size: 6vw;
+    }
+
+    .pagesFooterSection1EmailSent {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .pagesFooterSection1EmailSentFiled {
+        width: 80%;
+    }
+
+    .pagesFooterSection1EmailSentButton {
+        width: 50px;
+        height: 50px;
+    }
+
+    .pagesFooterSection2logo {
+        font-size: 15vw;
+    }
+}

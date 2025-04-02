@@ -1,0 +1,127 @@
+.password-form{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  background-color: rgb(197, 197, 197);
+}
+
+.password-form-pad{
+  display: grid;
+  place-items: center; /* Centers items both vertically & horizontally */
+  height: 60vh;
+  width: 40vw;
+  background-color: rgb(184, 184, 184);
+  border-radius: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* X-offset, Y-offset, Blur, Spread, Color */
+}
+
+.password-form-pad-input1,
+.password-form-pad-input2{
+  width: 55%;
+  height: 20%;
+  border-radius: 20px;
+  text-align: center; /* Centers the text inside the input */
+  direction: ltr;
+}
+
+.submitbutton{
+  width: 25%;
+  height: 30%;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(81, 81, 81, 0.3);
+  transition: transform 0.3s ease;
+}
+.submitbutton:hover{
+  transform: scale(1.1);
+  background-color: rgb(255, 255, 255);
+}
+
+
+
+
+.add-product{
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center; /* Centers items both vertically & horizontally */
+ 
+}
+
+
+
+.add-new-product{
+  height: 80vh;
+  width: 60vw;
+  background-color: rgb(237, 237, 237);
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10vh;
+  margin-top: 10px;
+}
+
+
+.add-new-product-tipe {
+  width: 75%;
+  border-radius: 20px;
+  display: flex;
+  margin-top: 7.5%;  
+}
+
+.add-new-product-tipe1,
+.add-new-product-tipe2,
+.add-new-product-tipe3,
+.add-new-product-tipe4 {
+  width: 25%;
+  height: 5vh;
+  border: none;
+  background-color: white;
+  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-new-product-tipe1:hover,
+.add-new-product-tipe2:hover,
+.add-new-product-tipe3:hover,
+.add-new-product-tipe4:hover {
+
+  background-color: azure;
+  
+}
+
+/* Active state when clicked */
+.add-new-product-tipe1.active,
+.add-new-product-tipe2.active,
+.add-new-product-tipe3.active,
+.add-new-product-tipe4.active {
+  background-color: aliceblue;
+}
+
+
+.add-new-product-link,
+.add-new-product-name,
+.add-image-for-360-tour{
+  width: 30%;
+  height: 5%;
+  border-radius: 10px;
+  text-align: center; /* Centers the text inside the input */
+  direction: ltr; /* Makes the input text start from the right side */
+}
+
+
+.add-new-product-add-product-button{
+  width: 15%;
+  height: 5%;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(126, 252, 212);
+  box-shadow: 5px 5px 10px rgba(81, 81, 81, 0.3);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.add-new-product-add-product-button:hover{
+  transform: scale(1.1);  /* Slightly increase button size */
+}
