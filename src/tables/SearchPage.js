@@ -11,7 +11,7 @@ function SearchPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://voxelweb.onrender.com/products")
       .then((response) => {
         const modifiedItems = response.data.map((item) => {
           if (item.producttipe.toLowerCase() === "render" && item.url.includes("drive.google.com")) {
