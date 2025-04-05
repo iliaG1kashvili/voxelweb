@@ -10,7 +10,7 @@
   width: 1px;
   height: auto;
   background-color: #e34a3f1f; /* Light yellow */
-  border-radius: 50%;
+  border-radius: 100%;
   border: none;
   pointer-events: none;
   box-shadow: 0 0 50vh 30vh #e34a3f74; /* Glow effect */

@@ -10,6 +10,7 @@ app.use(express.json());
 app.use(
   cors({
     origin: "https://voxelweb-1.onrender.com",
+    // origin: "http://localhost:3000/",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
@@ -31,7 +32,7 @@ db.connect((err) => {
 // 🔹 **User Login Endpoint**
 app.post("/login", (req, res) => {
   const { username, userpassword } = req.body;
-  const query = "SELECT * FROM users WHERE username = ? AND userpassword = ?";
+  const query = "SELECT * FROM users WHERE accountuser = ? AND accountpassword = ?";
 
   db.query(query, [username, userpassword], (err, result) => {
     if (err) return res.status(500).json({ error: "Server error" });

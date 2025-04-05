@@ -8,10 +8,10 @@
   width: 1px;
   height: auto;
   background-color: #17f1d1; /* Light yellow */
-  border-radius: 50%;
+  border-radius: 100%;
   border: none;
   pointer-events: none;
-  box-shadow: 0 0 50vh 30vh #17f1d1; /* Glow effect */
+  box-shadow: 50vh 50vh 50vh 50vh #17f1d1; /* Glow effect */
   transform: translate(-50%, -50%); /* Centers the glow */
   transition: transform 0.5s linear;
   mix-blend-mode: lighten; /* Makes it blend nicely with the background */
@@ -59,10 +59,10 @@
 
 /* Keep original design but make it responsive */
 .MainPAgesection1ImageAndText {
-  background-image: url('../images/MainPAgeSection1Img.png');
+  background-image: url('../images/imageforfirstmainpage.jpg');
   background-size: cover;
   background-position: center;
-  width: 40vw;
+  width: 80vw;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

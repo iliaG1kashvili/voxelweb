@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./MainPage.css";
 import ScrollAnimation from "../scroldownanimation/ScrollAnimation";
-import section1Img from "../images/MainPAgeSection1Img.png";
+import section1Img from "../images/imageforfirstmainpage.jpg";
 import img1 from "../images/1.png";
 import img2 from "../images/2.png";
 import img3 from "../images/3.png";
