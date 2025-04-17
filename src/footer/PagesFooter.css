@@ -23,9 +23,11 @@
 
 .pagesFooterSection2logo {
     font-family: 'JetBrains Mono', monospace;
-    color: red;
-    font-size: 20rem; /* Responsive font size */
+    color: black;
+    font-size: 4rem; /* Responsive font size */
     text-align: center;
+    display: flex;
+    user-select: none;
 }
 
 /* Align left */

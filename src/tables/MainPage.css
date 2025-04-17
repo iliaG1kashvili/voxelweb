@@ -44,6 +44,21 @@
 
 
 
+.godownbuttonfromfirsttosecond{
+  width: 15vh;
+  height: 15vh;
+  border-radius: 100%;
+  background-color: #1d1d1f00;
+  border-color: #6231c4;
+  border: solid #6231c4;
+  border-width: 2px;
+  cursor: pointer;
+  margin-left: -3vh;
+}
+.godownarrowimage{
+  width: 70%;
+  height: 70%;
+}
 
 
 
@@ -704,7 +719,7 @@
 
 .MainPAgesection6 h1 {
   font-family: 'Jaini Purva', cursive;
-  font-size: clamp(3rem, 10vw, 8rem); /* Responsive font size */
+  font-size: clamp(3rem, 10vw, 7rem); /* Responsive font size */
   font-weight: 500; /* Make text thinner */
   color: white;
   line-height: 1.2; /* Adjust spacing */
@@ -712,10 +727,9 @@
   overflow-y: hidden;
   text-align: center;
 }
-
 /* Adjust margin dynamically */
 .MainPAgesection6Text2 {
-  margin-left: -15vw;
+  margin-left: 5vw;
 }
 
 /* 🔹 Tablet View (768px and below) */

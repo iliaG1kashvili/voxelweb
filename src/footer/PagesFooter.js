@@ -20,7 +20,10 @@ const Footer = () => {
       </div>
 
       <div className="pagesFooterSection2">
-        <h1 className="pagesFooterSection2logo">V</h1>
+        <h1 className="pagesFooterSection2logo" >        
+          <h3 className="creatinglogo1">V</h3>
+          <h3>oxel</h3>
+        </h1>
       </div>
       <div className="pagesFooterSection3">
         <p className="pagesFooterSection3UpperSmallText">GET IN TOUCH</p>

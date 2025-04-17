@@ -6,8 +6,12 @@ import img3 from "../images/3.png";
 import img4 from "../images/4.png";
 import img5 from "../images/11.png";
 import img6 from '../images/tecno.png'
+import { useLanguage } from "../swap/LanguageContext";
+import content from "../swap/lang.json";
+
 
 function WhatWeDoPage() {
+  const { language } = useLanguage();
   return (
     <div className="WhatWeDoPage">
       <GlowingCursor />
@@ -19,12 +23,7 @@ function WhatWeDoPage() {
             <div className="MainPAgesection4conteiner1Row1">
               <h4 className="MainPAgesection4conteiner1HeaderText">Render</h4>
               <p className="MainPAgesection4conteiner1InformationalText">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                malesuada quam eget felis vehicula luctus. Praesent ac consequat
-                augue. Donec sed justo at odio pulvinar congue a et ligula. Nam at
-                lorem lorem. Integer maximus libero vel tortor mollis, quis
-                pretium ipsum efficitur. Sed tortor orci, consectetur in eros non,
-                mattis faucibus orci.
+              {content[language].MainPAgesection4conteiner1InformationalText}
               </p>
             </div>
           </div>
@@ -32,14 +31,9 @@ function WhatWeDoPage() {
           <div className="MainPAgesection4conteiner2">
             <img className="MainPAgesection4conteiner2image1" src={img2} alt="" />
             <div className="MainPAgesection4conteiner2Row1">
-              <h4 className="MainPAgesection4conteiner2HeaderText">Architecture</h4>
+              <h4 className="MainPAgesection4conteiner2HeaderText">Animation</h4>
               <p className="MainPAgesection4conteiner2InformationalText">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                malesuada quam eget felis vehicula luctus. Praesent ac consequat
-                augue. Donec sed justo at odio pulvinar congue a et ligula. Nam at
-                lorem lorem. Integer maximus libero vel tortor mollis, quis
-                pretium ipsum efficitur. Sed tortor orci, consectetur in eros non,
-                mattis faucibus orci.
+              {content[language].MainPAgesection4conteiner2InformationalText}
               </p>
             </div>
           </div>
@@ -49,26 +43,16 @@ function WhatWeDoPage() {
             <div className="MainPAgesection4conteiner3Row1">
               <h4 className="MainPAgesection4conteiner3HeaderText">360 tour</h4>
               <p className="MainPAgesection4conteiner3InformationalText">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                malesuada quam eget felis vehicula luctus. Praesent ac consequat
-                augue. Donec sed justo at odio pulvinar congue a et ligula. Nam at
-                lorem lorem. Integer maximus libero vel tortor mollis, quis
-                pretium ipsum efficitur. Sed tortor orci, consectetur in eros non,
-                mattis faucibus orci.
+              {content[language].MainPAgesection4conteiner3InformationalText}
               </p>
             </div>
           </div>
           <div className="MainPAgesection4conteiner2">
             <img className="MainPAgesection4conteiner2image1" src={img6} alt="" />
             <div className="MainPAgesection4conteiner2Row1">
-              <h4 className="MainPAgesection4conteiner2HeaderText">animation</h4>
+              <h4 className="MainPAgesection4conteiner2HeaderText">Multiplication</h4>
               <p className="MainPAgesection4conteiner2InformationalText">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-                malesuada quam eget felis vehicula luctus. Praesent ac consequat
-                augue. Donec sed justo at odio pulvinar congue a et ligula. Nam at
-                lorem lorem. Integer maximus libero vel tortor mollis, quis
-                pretium ipsum efficitur. Sed tortor orci, consectetur in eros non,
-                mattis faucibus orci.
+
               </p>
             </div>
           </div>

@@ -3,7 +3,7 @@
 .PageHeadersPage {
     display: flex;
     width: 100vw;
-    height: 110vh;
+    height: 100vh;
     flex-wrap: wrap; /* Allow elements to wrap on smaller screens */
 }
 
@@ -12,9 +12,12 @@
     flex: 1;
     height: 100%; /* Ensure both sections take up full height */
 }
+.PageHeadersPageSection1{
+    background-color: red;
+}
 
 .PageHeadersPageSection1seperation {
-    height: 76vh;
+    height: 60vh;
 }
 
 .PageHeadersPageSection1Text1,
@@ -24,7 +27,7 @@
 }
 
 .PageHeadersPageSection1Text1 {
-    color: #a374ff;
+    color: #ffffff;
     font-size: 1rem; /* Adjusted font size */
 }
 
@@ -121,7 +124,8 @@
 }
 
 .PageHeadersPageSection1iconimg1:hover {
-    background-color: aqua;
+    background-color: blue;
+    border-radius: 30px;
 }
 
 .PageHeadersPageSection1iconimg2:hover {
@@ -131,10 +135,12 @@
 
 .PageHeadersPageSection1iconimg3:hover {
     background-color: blue;
+    border-radius: 30px;
 }
 
 .PageHeadersPageSection1iconimg4:hover {
     background-color: red;
+    border-radius: 100%;
 }
 
 /* Media Queries for responsiveness */

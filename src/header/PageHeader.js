@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useLanguage } from "../swap/LanguageContext"; // assuming context is set up
 import "./PageHeader.css";
+import headerlogo from "../images/headerlogo1.png";
 
 function PageHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [showButton, setShowButton] = useState(true);
-  let lastScrollY = window.scrollY;
+  const { language, switchLanguage } = useLanguage();
   const navigate = useNavigate();
-  const location = useLocation(); // Get current page location
+  const location = useLocation();
+  let lastScrollY = window.scrollY;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +31,10 @@ function PageHeader() {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const toggleLanguage = () => {
+    switchLanguage(language === "en" ? "ka" : "en");
+  };
+
   return (
     <div className="PageHeader">
       <h1
@@ -36,11 +43,24 @@ function PageHeader() {
           setMenuOpen(!menuOpen);
           handleNavigate("/");
         }}
+        
       >
-        VOXEL
+        <h3 className="creatinglogo1">V</h3>
+        <h3>oxel</h3>
       </h1>
+
       <div className="right-container">
-        {/* Hide "Get in Touch" button when on /PageHeadersPage */}
+        {/* Language Toggle Button - placed before "Get in touch" */}
+        {location.pathname !== "/PageHeadersPage" && (
+          <button
+            className={`langToggleButton ${showButton ? "" : "hidden"}`}
+            onClick={toggleLanguage}
+          >
+            {language === "en" ? "🇬🇪 KA" : "🇺🇸 EN"}
+          </button>
+        )}
+
+        {/* Get in Touch Button */}
         {location.pathname !== "/PageHeadersPage" && (
           <button
             className={`getInTachButton ${showButton ? "" : "hidden"}`}
@@ -50,11 +70,11 @@ function PageHeader() {
           </button>
         )}
 
-        {/* Show "X" button when on /PageHeadersPage, otherwise show the hamburger menu */}
+        {/* Hamburger or Close Button */}
         {location.pathname === "/PageHeadersPage" ? (
           <button
             className="close-button"
-            onClick={() => navigate(-1)} // Go back to previous page
+            onClick={() => navigate(-1)}
           >
             ✖
           </button>

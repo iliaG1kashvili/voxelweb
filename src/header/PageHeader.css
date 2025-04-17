@@ -12,6 +12,38 @@
   z-index: 1000;
 }
 
+
+
+
+.langToggleButton {
+  margin-right: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  background-color: transparent;
+  border: 1px solid #9e70f6;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.langToggleButton.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.creatinglogo1{
+  background-color: #e5473e;
+  color: rgb(255, 255, 255);
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+
+
+
 /* Aligns the hamburger and button to the right */
 .right-container {
   display: flex;
@@ -61,7 +93,9 @@
 }
 
 .headersMainText {
-  color: #17F1D1;
+  align-items: center;
+  display: flex;
+  color: rgb(74, 74, 74);
 }
 
 /* Get in touch button */

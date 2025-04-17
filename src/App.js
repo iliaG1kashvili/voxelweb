@@ -8,6 +8,7 @@ import SearchPage from "./tables/SearchPage";
 import PagesFooter from "./footer/PagesFooter";
 import PageHeadersPage from './header/PageHeadersPage';
 import ProtectedTable from './private/ProtectedTable'
+import { LanguageProvider } from './swap/LanguageContext';
 import './App.css'; // Import your styles for transitions
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <>
+     <LanguageProvider>
       <PageHeader />
 
       <AnimatePresence>
@@ -121,6 +123,7 @@ function App() {
       </AnimatePresence>
 
       <PagesFooter />
+      </LanguageProvider>
     </>
   );
 }

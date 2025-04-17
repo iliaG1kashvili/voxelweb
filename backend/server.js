@@ -89,6 +89,17 @@ app.get("/products", (req, res) => {
   });
 });
 
+// Endpoint to get products
+app.get("/products", (req, res) => {
+  db.query("SELECT * FROM products", (err, results) => {
+    if (err) {
+      res.status(500).send("Database error");
+    } else {
+      res.json(results);
+    }
+  });
+});
+
 // 🔹 **Get Product by ID**
 app.get("/products/:id", (req, res) => {
   const { id } = req.params;
