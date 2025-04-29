@@ -26,11 +26,13 @@ function MainPage() {
   // Fetch images and process them
   useEffect(() => {
     axios
-      .get("https://voxelweb.onrender.com/products")
+      .get("https://voxelweb.onrender.com/products/render")
       .then((response) => {
         // Modify items if necessary, e.g., handling Google Drive links
-        const modifiedItems = response.data.map((item) => {
-          if (item.producttipe.toLowerCase() === "render" && item.url.includes("drive.google.com")) {
+        const modifiedItems = response.data
+        .filter((item) => item.category?.toLowerCase() === "render")
+        .map((item) => {
+          if (item.url.includes("drive.google.com")) {
             const fileIdMatch = item.url.match(/[-\w]{25,}/);
             if (fileIdMatch) {
               return {
@@ -41,6 +43,7 @@ function MainPage() {
           }
           return item;
         });
+      
 
         // Extract and set the URLs of the images
         const imageUrls = modifiedItems.map(item => item.url);

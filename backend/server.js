@@ -101,6 +101,22 @@ app.get("/products", (req, res) => {
 //   });
 // });
 
+
+
+router.get("/products/render", (req, res) => {
+  const query = "SELECT * FROM products WHERE category = 'render'";
+  db.query(query, (err, results) => {
+    if (err) {
+      console.error("Error fetching render products:", err);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+    res.json(results);
+  });
+});
+
+
+
+
 // 🔹 **Get Product by ID**
 app.get("/products/:id", (req, res) => {
   const { id } = req.params;
