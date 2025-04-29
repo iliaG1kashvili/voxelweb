@@ -105,15 +105,16 @@ app.get("/products", (req, res) => {
 
 // In server.js
 app.get("/products/render", (req, res) => {
-  const query = "SELECT * FROM products WHERE category = 'render'";
+  const query = "SELECT * FROM products WHERE producttipe = 'render'";
   db.query(query, (err, results) => {
     if (err) {
-      console.error("Error fetching render products:", err);
+      console.error("Error fetching render products:", err); // You’ll see this in logs
       return res.status(500).json({ error: "Internal Server Error" });
     }
     res.json(results);
   });
 });
+
 
 
 
