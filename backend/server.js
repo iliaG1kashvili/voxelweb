@@ -3,7 +3,8 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
+
 
 // Middleware
 app.use(express.json());
@@ -150,6 +151,13 @@ app.delete("/users/:id", (req, res) => {
     res.json({ message: "User deleted successfully" });
   });
 });
+
+
+app.get("/", (req, res) => {
+  res.json({ message: "Backend is working and CORS is active!" });
+});
+
+
 
 // Start Server
 app.listen(port, () => {
