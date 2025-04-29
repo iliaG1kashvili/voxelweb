@@ -12,6 +12,7 @@ import godownarrow from "../images/arrow-down.png";
 import GlowingCursor from "../goloweffect/GlowingCursor";
 import { useLanguage } from "../swap/LanguageContext";
 import content from "../swap/lang.json";
+import axios from 'axios';
 
 function MainPage() {
   const { language } = useLanguage();
@@ -20,16 +21,42 @@ function MainPage() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
+ 
+  
+  // Fetch images and process them
   useEffect(() => {
-    fetch("https://voxelweb-1.onrender.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("Fetched data:", data); // Inspect actual structure
-        const renderImages = data.filter((item) => item.producttipe === "render");
-        setImages(renderImages.map((img) => img.toursimageurl));
+    axios
+      .get("https://voxelweb.onrender.com/products")
+      .then((response) => {
+        // Modify items if necessary, e.g., handling Google Drive links
+        const modifiedItems = response.data.map((item) => {
+          if (item.producttipe.toLowerCase() === "render" && item.url.includes("drive.google.com")) {
+            const fileIdMatch = item.url.match(/[-\w]{25,}/);
+            if (fileIdMatch) {
+              return {
+                ...item,
+                url: `https://drive.google.com/thumbnail?id=${fileIdMatch[0]}`,
+              };
+            }
+          }
+          return item;
+        });
+
+        // Extract and set the URLs of the images
+        const imageUrls = modifiedItems.map(item => item.url);
+        setImages(imageUrls);
       })
-      .catch((err) => console.error("Failed to fetch images:", err));
+      .catch((error) => {
+        console.error("Error fetching images:", error);
+      });
   }, []);
+
+  // Function to determine the class name based on the index
+  const getClassName = (index) => {
+    if (index === 0) return 'current'; // First image is the current one
+    if (index === images.length - 1) return 'next'; // Last image is the next one
+    return 'prev'; // Other images are the previous ones
+  };
   
   
 
@@ -62,12 +89,7 @@ function MainPage() {
     window.scrollBy({ top: window.innerHeight * 1.4, behavior: "smooth" });
   };
 
-  const getClassName = (index) => {
-    if (index === currentIndex) return "current";
-    if (index === (currentIndex + images.length - 1) % images.length) return "prev";
-    if (index === (currentIndex + 1) % images.length) return "next";
-    return "";
-  };
+
 
 
   return (
@@ -130,17 +152,17 @@ function MainPage() {
 
         {/* section3 */}
         <div className="MainPAgesection3">
-        <div className="carousel-container"> 
-          {images.map((image, index) => (
-            <img
-              src={image}
-              alt={`carousel-${index}`}
-              className={`carousel-image ${getClassName(index)}`}
-              key={index}
-            />
-          ))}
-        </div>
+      <div className="carousel-container">
+        {images.map((image, index) => (
+          <img
+            src={image}
+            alt={`carousel-${index}`}
+            className={`carousel-image ${getClassName(index)}`}
+            key={index}
+          />
+        ))}
       </div>
+    </div>
 
 
 
