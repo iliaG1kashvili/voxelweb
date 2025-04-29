@@ -53,19 +53,22 @@ function MainPage() {
 
   // Function to determine the class name based on the index
   const getClassName = (index) => {
-    if (index === 0) return 'current'; // First image is the current one
-    if (index === images.length - 1) return 'next'; // Last image is the next one
-    return 'prev'; // Other images are the previous ones
+    if (index === currentIndex) return 'current';
+    if (index === (currentIndex + 1) % images.length) return 'next';
+    return 'prev';
   };
+  
   
   
 
   useEffect(() => {
+    if (images.length === 0) return;
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 2500);
     return () => clearInterval(interval);
   }, [images]);
+  
 
   useEffect(() => {
     const handleMouseMove = (e) => {
