@@ -21,7 +21,7 @@ function MainPage() {
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    fetch("https://voxelweb-1.onrender.com/")
+    fetch("https://voxelweb-1.onrender.com/products")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched data:", data); // Inspect actual structure
