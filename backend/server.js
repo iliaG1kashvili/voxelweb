@@ -10,11 +10,11 @@ app.use(express.json());
 app.use(
   cors({
     origin: "https://voxelweb-1.onrender.com",
-    // origin: "http://localhost:3000/",
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
+
 
 // MySQL Connection
 const db = mysql.createConnection({
@@ -90,15 +90,15 @@ app.get("/products", (req, res) => {
 });
 
 // Endpoint to get products
-app.get("/products", (req, res) => {
-  db.query("SELECT * FROM products", (err, results) => {
-    if (err) {
-      res.status(500).send("Database error");
-    } else {
-      res.json(results);
-    }
-  });
-});
+// app.get("/products", (req, res) => {
+//   db.query("SELECT * FROM products", (err, results) => {
+//     if (err) {
+//       res.status(500).send("Database error");
+//     } else {
+//       res.json(results);
+//     }
+//   });
+// });
 
 // 🔹 **Get Product by ID**
 app.get("/products/:id", (req, res) => {
@@ -153,5 +153,6 @@ app.delete("/users/:id", (req, res) => {
 
 // Start Server
 app.listen(port, () => {
-  console.log(`🚀 Server running on http://localhost:${port}`);
+  console.log(`🚀 Server running on port ${port}`);
+
 });
