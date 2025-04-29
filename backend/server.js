@@ -103,7 +103,8 @@ app.get("/products", (req, res) => {
 
 
 
-router.get("/products/render", (req, res) => {
+// In server.js
+app.get("/products/render", (req, res) => {
   const query = "SELECT * FROM products WHERE category = 'render'";
   db.query(query, (err, results) => {
     if (err) {
@@ -113,6 +114,8 @@ router.get("/products/render", (req, res) => {
     res.json(results);
   });
 });
+
+
 
 
 

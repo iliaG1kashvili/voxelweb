@@ -26,7 +26,7 @@ function MainPage() {
   // Fetch images and process them
   useEffect(() => {
     axios
-      .get("https://voxelweb.onrender.com/products/render")
+      .get("https://voxelweb.onrender.com/products")
       .then((response) => {
         // Modify items if necessary, e.g., handling Google Drive links
         const modifiedItems = response.data
