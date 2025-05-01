@@ -30,7 +30,7 @@ function MainPage() {
       .then((response) => {
         // Modify items if necessary, e.g., handling Google Drive links
         const modifiedItems = response.data
-        .filter((item) => item.category?.toLowerCase() === "render")
+        .filter((item) => item.producttipe?.toLowerCase() === "render")
         .map((item) => {
           if (item.url.includes("drive.google.com")) {
             const fileIdMatch = item.url.match(/[-\w]{25,}/);
