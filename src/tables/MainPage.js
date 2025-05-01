@@ -56,10 +56,12 @@ function MainPage() {
 
   // Function to determine the class name based on the index
   const getClassName = (index) => {
-    if (index === currentIndex) return 'current';
-    if (index === (currentIndex + 1) % images.length) return 'next';
-    return 'prev';
+    if (index === currentIndex) return "current";
+    if (index === (currentIndex - 1 + images.length) % images.length) return "prev";
+    if (index === (currentIndex + 1) % images.length) return "next";
+    return ""; // hide all others
   };
+  
   
   
   
