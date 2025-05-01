@@ -14,12 +14,14 @@ import { useLanguage } from "../swap/LanguageContext";
 import content from "../swap/lang.json";
 import axios from 'axios';
 
-function MainPage() {
+  function MainPage() {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [images, setImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [tilt, setTilt] = useState({ x: 0, y: 0 });
+  const [isPaused, setIsPaused] = useState(false);
+
 
  
   
@@ -67,12 +69,15 @@ function MainPage() {
   
 
   useEffect(() => {
-    if (images.length === 0) return;
+    if (images.length === 0 || isPaused) return;
+  
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 2500);
+  
     return () => clearInterval(interval);
-  }, [images]);
+  }, [images, isPaused]);
+  
   
 
   useEffect(() => {
@@ -159,18 +164,23 @@ function MainPage() {
 
 
         {/* section3 */}
-        <div className="MainPAgesection3">
-      <div className="carousel-container">
-        {images.map((image, index) => (
-          <img
-            src={image}
-            alt={`carousel-${index}`}
-            className={`carousel-image ${getClassName(index)}`}
-            key={index}
-          />
-        ))}
-      </div>
-    </div>
+        <div
+  className="MainPAgesection3"
+  onMouseEnter={() => setIsPaused(true)}
+  onMouseLeave={() => setIsPaused(false)}
+>
+  <div className="carousel-container">
+    {images.map((image, index) => (
+      <img
+        src={image}
+        alt={`carousel-${index}`}
+        className={`carousel-image ${getClassName(index)}`}
+        key={index}
+      />
+    ))}
+  </div>
+</div>
+
 
 
 
