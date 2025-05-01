@@ -296,7 +296,6 @@
 
 /* MainPAgesection3 CSS */
 .MainPAgesection3{
-  transform: rotate(10deg);
   transition: transform 0.5s ease;
   align-items: center;
   display: flex;
