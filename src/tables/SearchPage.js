@@ -7,9 +7,12 @@ function SearchPage() {
   const [activeButton, setActiveButton] = useState(null);
   const [items, setItems] = useState([]);
   const [filteredItems, setFilteredItems] = useState([]);
+  const [popupImage, setPopupImage] = useState(null);
+
   const [popupVideo, setPopupVideo] = useState(null);
 
   useEffect(() => {
+    
     axios
       .get("https://voxelweb.onrender.com/products")
       .then((response) => {
@@ -35,7 +38,16 @@ function SearchPage() {
         console.error("Error fetching data:", error);
       });
   }, []);
-
+  const openImagePopup = (imageUrl) => {
+    setPopupImage(imageUrl);
+    document.body.style.overflow = "hidden";
+  };
+  
+  const closeImagePopup = () => {
+    setPopupImage(null);
+    document.body.style.overflow = "auto";
+  };
+  
   const filterOrder = ["render", "architecture", "360 tour", "animation"];
 
   const handleClick = (label) => {
@@ -110,7 +122,16 @@ function SearchPage() {
                     return (
                       <div key={item.id} className="SearchPageItem">
                         {category === "render" ? (
-                          <img src={item.url} alt="Render Image" width="100%" height="300" className="renderitem"/>
+                          <img
+                          src={item.url}
+                          alt="Render Image"
+                          width="100%"
+                          height="300"
+                          className="renderitem"
+                          onClick={() => openImagePopup(item.url)}
+                          style={{ cursor: "pointer" }}
+                        />
+                        
                         ) : category === "architecture" || category === "animation" ? (
                           videoId ? (
                             <div
@@ -160,6 +181,15 @@ function SearchPage() {
           </div>
         </div>
       )}
+      {popupImage && (
+        <div className="popup-overlay" onClick={closeImagePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-popup" onClick={closeImagePopup}>✖</button>
+            <img src={popupImage} alt="Full View" style={{ maxWidth: "90vw", maxHeight: "80vh", borderRadius: "8px" }} />
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }
