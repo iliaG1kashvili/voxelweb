@@ -174,6 +174,7 @@ import axios from 'axios';
       <img
         src={image}
         alt={`carousel-${index}`}
+        loading="lazy"
         className={`carousel-image ${getClassName(index)}`}
         key={index}
         onClick={() => handleNavigate("/our-catalog")}
