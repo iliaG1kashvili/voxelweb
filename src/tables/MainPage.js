@@ -229,14 +229,14 @@ import axios from 'axios';
             <h1 className="MainPAgesection5Section1header1">Render</h1>
             <div className="MainPAgesection5Section1Items">
               <img src={img1} className="MainPAgesection5Section1ItemsImg" />
-              <p className="MainPAgesection5Section1ItemsText">Name</p>
+              <p className="MainPAgesection5Section1ItemsText"></p>
             </div>
           </div>
           <div className="MainPAgesection5Section2">
             <h1 className="MainPAgesection5Section2header1">Architecture</h1>
             <div className="MainPAgesection5Section2Items">
               <img src={img2} className="MainPAgesection5Section1ItemsImg" />
-              <p className="MainPAgesection5Section1ItemsText">Name</p>
+              <p className="MainPAgesection5Section1ItemsText"></p>
             </div>
             <button 
               className="MainPAgesection5SeeMoreButton" 
@@ -249,7 +249,7 @@ import axios from 'axios';
             <h1 className="MainPAgesection5Section3header1">360 tour</h1>
             <div className="MainPAgesection5Section3Items">
             <img src={img3} className="MainPAgesection5Section1ItemsImg"/>
-            <p className="MainPAgesection5Section1ItemsText">Name</p>
+            <p className="MainPAgesection5Section1ItemsText"></p>
             </div>
           </div>
         </div>
