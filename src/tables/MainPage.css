@@ -301,7 +301,7 @@
   display: flex;
   align-content: center;
   justify-content: center;
-  min-height: 60vh;
+
 }
 
 .carousel-container {
@@ -309,7 +309,7 @@
   justify-content: center;
   align-items: center;
   width: 90vw;
-  min-height: 50vh;
+  height: 50vh;
   position: relative;
   margin-bottom: 10vh;
   overflow: hidden; /* important for Y clipping */
@@ -343,7 +343,7 @@
   height: auto;
 }
 .carousel-image.current:hover{
-  transform: scale(1.7) !important;
+  transform: scale(1.1) !important;
   opacity: 1 !important;
   z-index: 3;
   transition: transform 0.5s ease, opacity 0.5s ease;
