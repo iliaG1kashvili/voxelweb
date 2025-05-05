@@ -185,7 +185,7 @@ function SearchPage() {
         <div className="popup-overlay" onClick={closeImagePopup}>
           <div className="popup-content" onClick={(e) => e.stopPropagation()}>
             <button className="close-popup" onClick={closeImagePopup}>✖</button>
-            <img src={popupImage} alt="Full View" style={{ Width: "90vw", Height: "80vh", borderRadius: "8px" }} />
+            <img src={popupImage} className="poppupsimage" alt="Full View" />
           </div>
         </div>
       )}
