@@ -176,6 +176,7 @@ import axios from 'axios';
         alt={`carousel-${index}`}
         className={`carousel-image ${getClassName(index)}`}
         key={index}
+        onClick={() => handleNavigate("/our-catalog")}
       />
     ))}
   </div>
