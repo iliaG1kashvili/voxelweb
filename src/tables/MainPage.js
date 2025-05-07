@@ -122,16 +122,11 @@ import axios from 'axios';
 
             }}
           >
-            <p className="MainPAgesection1ImageAndTextText1">Conversion</p>
-            <div className="MainPAgesection1Row">
-              <p className="MainPAgesection1ImageAndTextText2">Through</p>
               <button className="MainPAgesection1ImageAndTextButton"
               onClick={() => handleNavigate("/our-catalog")}>
                 Discover What We Do
               </button>
-            </div>
-            <p className="MainPAgesection1ImageAndTextText3">Immersion</p>
-          </div>
+           </div>
         </div>
         <button onClick={handleScroll} className="godownbuttonfromfirsttosecond"><img className="godownarrowimage" src={godownarrow}/></button>
 
