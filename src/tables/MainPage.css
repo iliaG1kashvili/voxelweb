@@ -77,8 +77,8 @@
   background-image: url('../images/imageforfirstmainpage.jpg');
   background-size: cover;
   background-position: center;
-  width: 110vw;
-  height: 90vh;
+  width: 150vw;
+  height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
