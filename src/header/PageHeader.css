@@ -95,7 +95,7 @@
 .headersMainText {
   align-items: center;
   display: flex;
-  color: rgb(74, 74, 74);
+  color: rgb(255, 255, 255);
 }
 
 /* Get in touch button */
@@ -104,7 +104,7 @@
   border-radius: 30px;
   font-size: medium;
   color: white;
-  border-color: #9e70f6;
+  border-color: #ffffff;
   width: 8vw;
   height: 6vh;
   border-width: 0.1px;
@@ -241,5 +241,5 @@
 
 .getInTachButton:hover{
   
-  color: #9e70f6;
+  color: #c4c4c4;
 }
