@@ -53,7 +53,7 @@
   border: solid #6231c4;
   border-width: 2px;
   cursor: pointer;
-  margin-left: 42.5vh;
+  margin-left: 42.5vw;
 }
 .godownarrowimage{
   width: 70%;
@@ -477,7 +477,7 @@
 }
 
 .MainPAgesection4conteiner2HeaderText {
-  color: #A374FF;
+  color: #ffffff;
 }
 
 .MainPAgesection4conteiner3HeaderText {
