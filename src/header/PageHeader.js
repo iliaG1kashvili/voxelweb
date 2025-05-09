@@ -30,10 +30,14 @@ function PageHeader() {
     navigate(path);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   const toggleLanguage = () => {
-    switchLanguage(language === "en" ? "ka" : "en");
+    switchLanguage(
+      language === "en" ? "ka" :
+      language === "ka" ? "tr" :
+      "en"
+    );
   };
+  
 
   return (
     <div className="PageHeader">
@@ -56,7 +60,7 @@ function PageHeader() {
             className={`langToggleButton ${showButton ? "" : "hidden"}`}
             onClick={toggleLanguage}
           >
-            {language === "en" ? "🇬🇪 KA" : "🇺🇸 EN"}
+            { language === "en" ? "🇹🇷 US 🇬🇪" : language === "ka" ? "🇺🇸 GE 🇹🇷" : "🇬🇪 TR 🇺🇸"}
           </button>
         )}
 
