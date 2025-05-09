@@ -20,7 +20,7 @@
   padding: 8px 12px;
   font-size: 14px;
   background-color: transparent;
-  border: 1px solid #9e70f6;
+  border: 1px solid #ffffff;
   border-radius: 6px;
   cursor: pointer;
   color: white;
@@ -58,8 +58,8 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: white;
-  background-color: #9e70f6;
+  color: #1D1D1F;
+  background-color: #ffffff;
   border-radius: 100%;
   width: 6vh;
   height: 6vh;

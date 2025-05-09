@@ -128,8 +128,9 @@ import axios from 'axios';
               </button>
            </div>
         </div>
-        <button onClick={handleScroll} className="godownbuttonfromfirsttosecond"><img className="godownarrowimage" src={godownarrow}/></button>
-
+        <div className="containerforgodownbutton">
+          <button onClick={handleScroll} className="godownbuttonfromfirsttosecond"><img className="godownarrowimage" src={godownarrow}/></button>
+        </div>
 
 
 
