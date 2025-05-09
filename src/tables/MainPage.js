@@ -159,13 +159,22 @@ import axios from 'axios';
 
 
 
-        {/* section3 */}
-        <div
+        <div 
   className="MainPAgesection3"
   onMouseEnter={() => setIsPaused(true)}
   onMouseLeave={() => setIsPaused(false)}
 >
-  <div className="carousel-container">
+  <div className="carousel-container" style={{ position: "relative" }}>
+    
+    {/* Left Navigation Button */}
+    <button 
+      onClick={() => setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)}
+      className="carousel-button left"
+    >
+      ‹
+    </button>
+
+    {/* Carousel Images */}
     {images.map((image, index) => (
       <img
         src={image}
@@ -176,6 +185,15 @@ import axios from 'axios';
         onClick={() => handleNavigate("/our-catalog")}
       />
     ))}
+
+    {/* Right Navigation Button */}
+    <button 
+      onClick={() => setCurrentIndex((prev) => (prev + 1) % images.length)}
+      className="carousel-button right"
+    >
+      ›
+    </button>
+
   </div>
 </div>
 
